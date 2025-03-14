@@ -8,7 +8,7 @@
       state: present
 
   - name: run nginx  #run nginx and enable
-    ansible:builtin:service:
+    ansible.builtin.service:
       name: nginx
       state: started
       enable: yes
