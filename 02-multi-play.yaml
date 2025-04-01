@@ -5,3 +5,9 @@
     ansible.builtin.debug:
       msg: "Hello world and im learning devops"
 
+- name: PLAY-02
+  hosts: web
+  tasks:
+  -name: PLAY-02 TASK-02
+  ansible.builtin.debug:
+    msg: "need to complete devops fastly"
