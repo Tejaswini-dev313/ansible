@@ -23,7 +23,7 @@
      name: nginx
      state: present
 
-- name: enable services for nginx
+- name: run nginx
   ansible.builtin.service:
     name: nginx
     state: started
