@@ -9,8 +9,6 @@
       msg: "I am learning {{COURSE}} and deraion is {{DURATION}}"
 
   - name: printing information again
-    vars:
-      COURSE: ansible
     ansible.builtin.debug:
       msg: "im learning {{COURSE}}"
   
