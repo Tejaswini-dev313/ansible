@@ -1,5 +1,6 @@
-- name: ping 
+- name: PLAY-01
   hosts: web
   tasks:
-  - name: ping the server
-    ansible.builtin.ping:
+  - name: PLAY-01 TASK-01
+    ansible.builtin.debug:
+      msg: "im learing devops"
