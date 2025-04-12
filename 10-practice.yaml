@@ -5,15 +5,15 @@
     DURATION: 120HRS
   tasks:
   - name: print the information
-    ansible.builtin.dubug:
+    ansible.builtin.debug:
       msg: "I am learning {{COURSE}} and deraion is {{DURATION}}"
 
   - name: printing information again
     vars:
       COURSE: ansible
-    ansible.builtin.dubug:
+    ansible.builtin.debug:
       msg: "im learning {{COURSE}}"
   
   - name: printing duration again
-    ansible.builtin.dubug:
+    ansible.builtin.debug:
       msg: "Duration is {{DURATION}}"
