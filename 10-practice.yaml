@@ -3,7 +3,7 @@
   become: true
   tasks:
   - name: install server
-    absuble.builtin.package:
+    ansible.builtin.package:
       name: nginx
       state: present
 
@@ -13,4 +13,3 @@
       enabled: yes
       state: started
 
-      
