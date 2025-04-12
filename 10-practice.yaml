@@ -1,14 +1,16 @@
-- name: PLAY-01
+- name: install server and run
   hosts: web
+  become: true
   tasks:
-  - name: PLAY-01 TASK-01
-    ansible.builtin.debug:
-      msg: "im learing devops"
+  - name: install server
+    absuble.builtin.package:
+      name: nginx
+      state: present
 
-- name: PLAY-02
-  hosts: web
-  tasks: 
-  - name: PLAY-02 TASKS-02
-    ansible.builtin.debug:
-     msg: "i have to complete devops this month"
-     
+  - name: run nginx
+    ansible.builtin.server:
+      name: nginx
+      enabled: yes
+      state: started
+
+      
