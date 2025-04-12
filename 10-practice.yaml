@@ -1,7 +1,8 @@
 - name: variable print
   hosts: web
-  COURSE: Devops with AWS
-  DURATION: 120HRS
+  vars:
+    COURSE: Devops with AWS
+    DURATION: 120HRS
   tasks:
   - name: variables
     ansible.builtin.debug:
