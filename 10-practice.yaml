@@ -8,6 +8,7 @@
     prompt: "Please enter duration:"
     private: false
   tasks:
+  - name: print the course information
     ansible.builtin.debug:
       msg: "im learning {{COURSE}} and duration is {{DURATION}}"
     
