@@ -4,15 +4,16 @@
     COURSE: Devops with AWS
     DURATION: 120HRS
   tasks:
-  - name: 
+  - name: print the information
     ansible.builtin.dubug:
       msg: "I am learning {{COURSE}} and deraion is {{DURATION}}"
 
-  - name: printing it again
+  - name: printing information again
+    vars:
+      COURSE: ansible
     ansible.builtin.dubug:
       msg: "im learning {{COURSE}}"
   
   - name: printing duration again
     ansible.builtin.dubug:
       msg: "Duration is {{DURATION}}"
-      
