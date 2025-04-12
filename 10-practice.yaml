@@ -1,17 +1,7 @@
-- name: varialbes with multiple print
+- name: variables from files
   hosts: web
-  vars:
-    COURSE: Devops with AWS
-    DURATION: 120HRS
+  var_file:
+    -vars.yaml
   tasks:
-  - name: print the information
     ansible.builtin.debug:
-      msg: "I am learning {{COURSE}} and deraion is {{DURATION}}"
-
-  - name: printing information again
-    ansible.builtin.debug:
-      msg: "im learning {{COURSE}}"
-  
-  - name: printing duration again
-    ansible.builtin.debug:
-      msg: "Duration is {{DURATION}}"
+      msg: "im learning {{COURSE}} and duration is {{DURATION}}"
