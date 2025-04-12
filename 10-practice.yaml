@@ -1,15 +1,9 @@
-- name: install server and run
+- name: variable print
   hosts: web
-  become: true
+  COURSE: Devops with AWS
+  DURATION: 120HRS
   tasks:
-  - name: install server
-    ansible.builtin.package:
-      name: nginx
-      state: present
-
-  - name: run nginx
-    ansible.builtin.service:
-      name: nginx
-      enabled: yes
-      state: started
+  - name: variables
+    ansible.builtin.debug:
+      msg: "Im am learning {{COURSE}}, and duration is {{DURATION}}"
 
