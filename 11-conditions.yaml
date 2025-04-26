@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   var_prompt:
-    - name: number
-      prompt: please enter the number
-      private: false # not confidential
+  - name: number
+    prompt: please enter the number
+    private: false # not confidential
   tasks:
   - name: Print if this number less than 10
     ansible.builtin.debug:
