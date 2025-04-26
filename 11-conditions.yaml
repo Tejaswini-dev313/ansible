@@ -20,7 +20,7 @@
   vars_prompt:
   - name: number
     prompt: Please enter the number
-    Private: false
+    private: false
   tasks:
   - name: Print if number less than 20
     ansible.builtin.debug:
