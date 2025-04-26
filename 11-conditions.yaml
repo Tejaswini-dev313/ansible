@@ -25,7 +25,7 @@
   - name: Print if number less than 20
     ansible.builtin.debug:
       msg: "Given number {{ number }} is less than 20"
-    when: number | int < 10
+    when: number | int < 20
 
   - name: Print if number greate than or equal to 20
     ansible.builtin.debug:
