@@ -48,4 +48,4 @@
   - name: print if number is greater then or not
     ansible.builtin.debug:
       msg: "Given number {{ number }} greater then 20 "
-    when: number | >= 20
+    when: number | int >= 20
