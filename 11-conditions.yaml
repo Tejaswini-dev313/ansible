@@ -14,38 +14,21 @@
 #       msg: "Given {{ number }} is greater than or equal to 20"
 #     when: number >= 20
 
-# - name: To check number is less than or not
-#   hosts: local
-#   connection: local
-#   vars_prompt:
-#   - name: number
-#     prompt: Please enter the number
-#     private: false
-#   tasks:
-#   - name: Print if number less than 20
-#     ansible.builtin.debug:
-#       msg: "Given number {{ number }} is less than 20"
-#     when: number | int < 20
-
-#   - name: Print if number greate than or equal to 20
-#     ansible.builtin.debug:
-#       msg: "Given number {{ number }} is greate than or equal to 20"
-#     when: number | int >= 20
-  
-- name: check given number is less than or not
+- name: To check number is less than or not
   hosts: local
   connection: local
   vars_prompt:
   - name: number
-    prompt: please enter the number
+    prompt: Please enter the number
     private: false
   tasks:
-  - name: print if number is less then 20.
+  - name: Print if number less than 20
     ansible.builtin.debug:
-     msg: "Given number {{ number }} is less than 20 "
+      msg: "Given number {{ number }} is less than 20"
     when: number | int < 20
-  
-  - name: print if number is greater then or not
+
+  - name: Print if number greate than or equal to 20
     ansible.builtin.debug:
-      msg: "Given number {{ number }} greater then or equal to 20 "
+      msg: "Given number {{ number }} is greate than or equal to 20"
     when: number | int >= 20
+  
