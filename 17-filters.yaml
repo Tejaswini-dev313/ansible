@@ -11,3 +11,9 @@
       wishes: "Hello Ramesh"
     ansible.builtin.debug:
       msg: "{{ wishes | upper }}"
+
+  - name: print the lower case
+    vars:
+      greetings: HELLO TEJASWINI
+    ansible.builtin.debug:
+      msg: "{{ greetings | lower }}"
