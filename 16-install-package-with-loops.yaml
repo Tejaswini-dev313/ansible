@@ -1,13 +1,27 @@
-- name: install packages using loops
+# - name: install packages using loops
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: install packages
+#     ansible.builtin.package:
+#       name: "{{ item }}"
+#       state: present
+#     loop:
+#     - mysql
+#     - nginx
+#     - postfix
+
+
+- name: install few packages
   hosts: web
   become: yes
   tasks:
   - name: install packages
     ansible.builtin.package:
-      name: "{{ item }}"
-      state: present
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
     loop:
-    - mysql
-    - nginx
-    - postfix
-    
+    - { name: 'mysql', state: 'present' }
+    - { name: 'nginx', state: 'absent' }
+    - { name: 'postfix', state: 'absent' }
+        
