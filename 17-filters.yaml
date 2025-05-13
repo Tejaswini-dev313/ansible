@@ -37,3 +37,13 @@
         duration: 120 hours
     ansible.builtin.debug:
       msg: "{{ course | dict2items }}"
+
+  - name: convert list to map
+    vars:
+      course:
+        name: "Devops with AWS"
+        duration: 120 hours
+    ansible.builtin.debug:
+      msg: "{{ course | items2dict }}"
+
+        
