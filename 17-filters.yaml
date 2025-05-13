@@ -29,3 +29,11 @@
       numbers: [1,2,3,3,4,45,590,5,6]
     ansible.builtin.debug:
       msg: " Min: {{ numbers | min }}, Max: {{ numbers | max }}"
+
+  - names: conver map to list
+    vars:
+      course:
+        name: "Devops with AWS"
+        duration: 120 hours
+    ansible.builtin.debug:
+      msg: "{{ course | dict2items }}"
