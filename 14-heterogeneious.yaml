@@ -1,6 +1,6 @@
 - name: create heterogenious OS and install nginx
   hosts: web
-  become: yes
+  become: true
   tasks:
   - name: print the stats
     ansible.builtin.debug:
@@ -9,13 +9,13 @@
   - name: install nginx if Redhat
     ansible.builtin.dnf:
       name: nginx
-      state: yes
+      state: true
     when: ansible_os_family == "RedHat"
 
   - name: install nginx if its debian
     ansible.builtin.apt:
       name: nginx
-      state: yes
+      state: true
     when: ansible_os_family == "Debian"
 
     
