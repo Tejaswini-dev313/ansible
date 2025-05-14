@@ -38,12 +38,8 @@
     ansible.builtin.debug:
       msg: "{{ course | dict2items }}"
 
-  - name: convert list to map
+  - name: check ip address
     vars:
-      course:
-        name: "Devops with AWS"
-        duration: 120 hours
+      myip: 192.168.1.2
     ansible.builtin.debug:
-      msg: "{{ course | items2dict }}"
-
-        
+      msg: "{{ myip | ansible.utils.ipv4 }}"
