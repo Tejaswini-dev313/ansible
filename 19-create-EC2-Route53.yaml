@@ -19,11 +19,11 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
     loop: "{{ instances }}"
-    register: ec2_instance
+    register: ec2_instances
     
   - name: print the output
     ansible.builtin.debug:
-      msg: "{{ ec2_instance }}"
+      msg: "{{ ec2_instances }}"
 
   - name: create r53 records
     amazon.aws.route53:
@@ -32,7 +32,7 @@
       record: "{{ item.item }}.{{ zone }}" #mysql.tejudevops.shop
       type: A 
       ttl: 1
-      value: "{{ item.instance[0].private_ip_address }}"
+      value: "{{ item.instances[0].private_ip_address }}"
       wait: true
       overwrite: true # whenever there are existing records
-    loop: "{{ ec2_instance.results }}"
+    loop: "{{ ec2_instances.results }}"
